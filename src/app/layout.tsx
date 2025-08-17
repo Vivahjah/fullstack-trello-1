@@ -27,7 +27,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <header className="bg-gray-200 p-4">
+          <a href="" className="logo">Trello</a>
+        </header>
+        <main className="p-8">
+         {children}
+        </main>
       </body>
     </html>
   );
