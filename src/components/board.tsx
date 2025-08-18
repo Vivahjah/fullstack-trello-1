@@ -14,30 +14,29 @@ export type CardType = {
 
 const defaultColumns = [
     { id: "col1", name: "Todo", index: 0 },
-    { id: "col2", name: "In Progress", index: 1 },
-    { id: "col3", name: "Done", index: 2 },
+    { id: "col2", name: "In progress", index: 1 },
+    { id: "col3", name: "Done", index: 2 }
 
 ]
 
 const defaultCards: CardType[] = [
-    { id: "adszf", name: "Card 1", order: 0, columnId: "col1" },
-    // { id: "adszf", name: "Card 4", order: 0, columnId: "col1" },
-    { id: "qwerz", name: "Card 2", order: 1, columnId: "col2" },
-    { id: "zxcvb", name: "Card 3", order: 2, columnId: "col3" },
+    { id: "asdf1", name: "Task 1", order: 0, columnId: "col1" },
+    { id: "asdf2", name: "Task 5", order: 0, columnId: "col1" },
+    { id: "asdx", name: "Task 2", order: 1, columnId: "col2" },
+    { id: "asdz", name: "Task 3", order: 2, columnId: "col3" },
 ]
 
-
-
 const Board = () => {
+
+
     const [cards, setCards] = useState<CardType[]>(defaultCards);
     const [columns, setColumns] = useState(defaultColumns);
     return (
         <>
             <div className="flex gap-4">
-                {columns.map(column => (
-                    <Column
-                        setCards={setCards}
-                        key={column.index}
+                {columns.map((column) => (
+                    <Column key={column.id}
+                    setCards={setCards}
                         {...column}
                         cards={cards.filter(card => card.columnId === column.id)}
                     />
