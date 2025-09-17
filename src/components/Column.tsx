@@ -50,7 +50,7 @@ const Column = ({ id, name, cards, setCards }: ColumnProps) => {
       >
 
         {cards.map((card) => (
-          <div key={card.id} className="border bg-white my-2 p-2 rounded-md">
+          <div key={card.id} className="border border-gray-400 bg-white my-2 p-2 rounded-md">
             <span>{card.name}</span>
           </div>
         ))}
