@@ -1,9 +1,9 @@
 
+import { Button } from "@/components/ui/button";
 import LoginViews from "@/components/views/loginViews";
 import { authOptions } from "@/lib/authOptions";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
-
 
 export default async function Home() {
 
@@ -15,11 +15,11 @@ export default async function Home() {
     )
   }
   return (
-    <div> 
+    <div>
       <div className="text-4xl mb-4">Your boards</div>
       <div className="">
-        <Link className="btn primary inline-block"
-        href={"/new-board"}>Create new board
+        <Link href="/board/new">
+          <Button>+ New Board</Button>
         </Link>
       </div>
     </div>

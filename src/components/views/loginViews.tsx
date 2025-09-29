@@ -2,15 +2,16 @@
 "use client"
 
 import { signIn } from "next-auth/react"
+import { Button } from "../ui/button"
 
 export default function LoginViews() {
 
 
     return (
         <div className="w-full pt-8 text-center">
-            <button
+            <Button
                 onClick={() => signIn("google")}
-                type="button" className="cursor-pointer">Login</button>
+                className="cursor-pointer">Login</Button>
         </div>
     )
 }
