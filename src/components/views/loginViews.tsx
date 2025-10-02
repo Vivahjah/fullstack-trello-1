@@ -4,6 +4,7 @@
 import { signIn } from "next-auth/react"
 import { Button } from "../ui/button"
 
+
 export default function LoginViews() {
 
 
@@ -11,7 +12,9 @@ export default function LoginViews() {
         <div className="w-full pt-8 text-center">
             <Button
                 onClick={() => signIn("google")}
-                className="cursor-pointer">Login</Button>
+                className="cursor-pointer">Login
+            </Button>
+          
         </div>
     )
 }
