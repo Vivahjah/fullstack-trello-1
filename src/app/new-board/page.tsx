@@ -1,58 +1,39 @@
-
 "use client"
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
+
 
 import { Button } from "@/components/ui/button"
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-
-const FormSchema = z.object({
-  boardName: z.string().min(2, "Board name must be at least 2 characters." ),
-})
-
-export default  function NewBoardPage() {
+import { Label } from "@/components/ui/label"
+import { createBoard } from "../actions/boardActions"
+import { redirect } from "next/navigation"
 
 
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
-    defaultValues: {
-      boardName: "",
-    },
-  })
 
-  
+
+
+export default function NewBoardPage() {
+  async function handleSubmit(formData: FormData) {
+    const boardName = formData.get("boardName")
+    const {id} = await createBoard(boardName as string)
+    redirect(`/board/${id}`)
+    // console.log({boardId})
+
+    
+
+
+  }
+
+
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(() => {
-        console.log("submit");
-      })} className="max-w-xs space-y-2">
-        <FormField
-          control={form.control}
-          name="boardName"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-xl text-primary">Create a board</FormLabel>
-              <FormControl>
-                <Input placeholder="New board" {...field} />
-              </FormControl>            
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button className="w-full cursor-pointer">
-            Submit
-        </Button>
+    <div className="max-w-xs ">
+      <form action={handleSubmit} className="space-y-2">
+        <Label htmlFor="boardName" className="text-lg">Board Name</Label>
+        <Input name="boardName" placeholder="Enter board name" />
+        <Button type="submit" className="w-full cursor-pointer">Create board</Button>
+
       </form>
-    </Form>
+    </div>
+
   )
 }
