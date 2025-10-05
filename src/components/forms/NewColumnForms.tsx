@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "../ui/button";
 
 const NewColumnForms = () => {
   const [columnName, setColumnName] = useState(""); // State to store input value
@@ -22,12 +23,12 @@ const NewColumnForms = () => {
           className="border border-gray-300 p-2 w-full"
         />
       </label>
-      <button
-        className="w-full block cursor-pointer bg-blue-500 text-white p-2 rounded"
+      <Button
+        className="w-full block cursor-pointer "
         type="submit"
       >
         Create column
-      </button>
+      </Button>
     </form>
   );
 };
