@@ -324,6 +324,13 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@liveblocks/client@3.8.0", "@liveblocks/client@^3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@liveblocks/client/-/client-3.8.0.tgz#17d9220884b7bdddd75c161b623a22ab4278c5bc"
+  integrity sha512-uBQwe5n7VEhRG1Q1AGEmeub5tQYSxRLiY+ku9NBfeyRaO/ofG2lz+PvE6pMcYmWE+jHqr4XJVNGL7Yf9/O/Qqg==
+  dependencies:
+    "@liveblocks/core" "3.8.0"
+
 "@liveblocks/core@3.8.0":
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/@liveblocks/core/-/core-3.8.0.tgz#dae58f6326c9f84451e7432430f9e7241d87b488"
@@ -338,6 +345,14 @@
     "@stablelib/base64" "^1.0.1"
     fast-sha256 "^1.3.0"
     node-fetch "^2.6.1"
+
+"@liveblocks/react@^3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@liveblocks/react/-/react-3.8.0.tgz#dcce1424e1606f94875e6b261473ad1c1be9e10e"
+  integrity sha512-b0bjNiWMGnc4lMX5ZznjKo/eRKywESzBy81s9/kcOOPALXu+YSE3YHbHv+x4O1s7vHgbPMA4ZHOwu3CsU45wzg==
+  dependencies:
+    "@liveblocks/client" "3.8.0"
+    "@liveblocks/core" "3.8.0"
 
 "@mongodb-js/saslprep@^1.3.0":
   version "1.3.0"
